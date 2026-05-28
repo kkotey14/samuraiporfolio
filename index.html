@@ -870,20 +870,6 @@
     letter-spacing: 0.3em;
   }
 
-  /* DECORATIVE SUMI-E BRUSH STROKE */
-  .sumie-splash {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .sumie-stroke {
-    width: 100%;
-    height: 100%;
-    filter: url(#sumie-filter);
-  }
-  
   /* Dramatic Welcome Layout */
   .hero-welcome-wrap {
     text-align: center;
@@ -1008,49 +994,6 @@
 <div id="hero">
   <div class="hero-kana">武士道</div>
   <div class="hero-number">001 / PORTFOLIO</div>
-
-  <div class="sumie-splash">
-    <svg class="sumie-stroke" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="sumie-filter" x="-20%" y="-20%" width="140%" height="140%">
-          <!-- Generate rough noise for the dry brush effect -->
-          <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="4" result="noise1"/>
-          <!-- Displace the original shape based on the noise to create jagged edges -->
-          <feDisplacementMap in="SourceGraphic" in2="noise1" scale="40" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
-          <!-- Boost contrast to make the edges sharp, avoiding newline bugs in values -->
-          <feColorMatrix in="displaced" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 7 -2.5" result="sharp"/>
-        </filter>
-      </defs>
-      
-      <!-- Main energetic stroke (Bottom-Left to Top-Right) -->
-      <path d="M-100,1050 C 200,800 400,600 800,200 C 950,50 1050,-50 1150,-150" fill="none" stroke="#ffffff" stroke-width="100" stroke-linecap="round"/>
-      
-      <!-- Secondary trailing strokes for speed/energy -->
-      <path d="M0,1100 C 250,850 450,650 850,250 C 1000,100 1100,0 1200,-100" fill="none" stroke="#ffffff" stroke-width="40" stroke-linecap="round" opacity="0.9"/>
-      <path d="M-50,950 C 150,750 350,550 750,150 C 900,0 1000,-100 1100,-200" fill="none" stroke="#ffffff" stroke-width="25" stroke-linecap="round" opacity="0.8"/>
-
-      <!-- Directional Splatters (following the path) -->
-      <circle cx="150" cy="800" r="15" fill="#ffffff" />
-      <circle cx="220" cy="720" r="22" fill="#ffffff" />
-      <circle cx="380" cy="580" r="30" fill="#ffffff" />
-      <circle cx="450" cy="480" r="12" fill="#ffffff" />
-      <circle cx="600" cy="350" r="25" fill="#ffffff" />
-      <circle cx="750" cy="220" r="18" fill="#ffffff" />
-      <circle cx="880" cy="80" r="40" fill="#ffffff" />
-      <circle cx="980" cy="-20" r="20" fill="#ffffff" />
-      
-      <!-- Fine Mist Dots (scattered tightly around the stroke) -->
-      <circle cx="100" cy="900" r="6" fill="#ffffff" />
-      <circle cx="180" cy="850" r="8" fill="#ffffff" />
-      <circle cx="300" cy="650" r="5" fill="#ffffff" />
-      <circle cx="350" cy="700" r="7" fill="#ffffff" />
-      <circle cx="500" cy="450" r="4" fill="#ffffff" />
-      <circle cx="550" cy="500" r="6" fill="#ffffff" />
-      <circle cx="700" cy="300" r="5" fill="#ffffff" />
-      <circle cx="820" cy="150" r="8" fill="#ffffff" />
-      <circle cx="950" cy="50" r="6" fill="#ffffff" />
-    </svg>
-  </div>
 
   <div style="display:flex;flex-direction:column;align-items:center;">
     <div class="samurai-wrap">
