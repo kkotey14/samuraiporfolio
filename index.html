@@ -884,12 +884,12 @@
 
   /* DECORATIVE INK SPLASH */
   .ink-splash {
-    position: fixed;
+    position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 1;
     pointer-events: none;
     overflow: hidden;
-    opacity: 0.8;
+    opacity: 0.6;
   }
   .ink-splash::before, .ink-splash::after {
     content: '';
@@ -901,30 +901,30 @@
   .ink-splash::before {
     width: 600px;
     height: 400px;
-    top: 10%;
-    left: -100px;
+    top: -100px;
+    left: -150px;
     transform: rotate(-15deg);
-    opacity: 0.7;
+    opacity: 0.4;
   }
   .ink-splash::after {
-    width: 400px;
-    height: 300px;
-    bottom: 10%;
-    right: -50px;
+    width: 500px;
+    height: 400px;
+    bottom: -150px;
+    right: -100px;
     transform: rotate(20deg);
-    opacity: 0.5;
+    opacity: 0.3;
   }
   .ink-splat {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     background: #fff;
     border-radius: 50%;
     filter: url(#ink-filter);
-    opacity: 0.6;
+    opacity: 0.4;
   }
-  .splat-1 { top: 40%; right: 15%; transform: scale(1.2); }
-  .splat-2 { bottom: 20%; left: 20%; transform: scale(0.8) rotate(45deg); }
+  .splat-1 { top: 30%; right: 10%; transform: scale(1.3) rotate(30deg); }
+  .splat-2 { bottom: 15%; left: 15%; transform: scale(0.9) rotate(-45deg); }
 
   /* DIVIDER */
   .full-rule {
@@ -974,6 +974,11 @@
 <div id="hero">
   <div class="hero-kana">武士道</div>
   <div class="hero-number">001 / PORTFOLIO</div>
+
+  <div class="ink-splash">
+    <div class="ink-splat splat-1"></div>
+    <div class="ink-splat splat-2"></div>
+  </div>
 
   <div style="display:flex;flex-direction:column;align-items:center;">
     <div class="samurai-wrap">
