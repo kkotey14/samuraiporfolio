@@ -882,6 +882,50 @@
     letter-spacing: 0.3em;
   }
 
+  /* DECORATIVE INK SPLASH */
+  .ink-splash {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0.8;
+  }
+  .ink-splash::before, .ink-splash::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    filter: url(#ink-filter);
+    border-radius: 50%;
+  }
+  .ink-splash::before {
+    width: 600px;
+    height: 400px;
+    top: 10%;
+    left: -100px;
+    transform: rotate(-15deg);
+    opacity: 0.7;
+  }
+  .ink-splash::after {
+    width: 400px;
+    height: 300px;
+    bottom: 10%;
+    right: -50px;
+    transform: rotate(20deg);
+    opacity: 0.5;
+  }
+  .ink-splat {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    filter: url(#ink-filter);
+    opacity: 0.6;
+  }
+  .splat-1 { top: 40%; right: 15%; transform: scale(1.2); }
+  .splat-2 { bottom: 20%; left: 20%; transform: scale(0.8) rotate(45deg); }
+
   /* DIVIDER */
   .full-rule {
     width: 100%;
@@ -914,6 +958,17 @@
 <body>
 
 <div class="cursor" id="cursor"></div>
+<div class="ink-splash">
+  <div class="ink-splat splat-1"></div>
+  <div class="ink-splat splat-2"></div>
+</div>
+
+<svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
+  <filter id="ink-filter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" />
+  </filter>
+</svg>
 
 <!-- HERO -->
 <div id="hero">
