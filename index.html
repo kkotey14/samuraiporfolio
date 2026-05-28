@@ -889,42 +889,41 @@
     z-index: 1;
     pointer-events: none;
     overflow: hidden;
-    opacity: 0.6;
   }
   .ink-splash::before, .ink-splash::after {
     content: '';
     position: absolute;
-    background: #fff;
+    background: #ffffff;
     filter: url(#ink-filter);
     border-radius: 50%;
   }
   .ink-splash::before {
-    width: 600px;
-    height: 400px;
-    top: -100px;
-    left: -150px;
+    width: 300px;
+    height: 200px;
+    top: -50px;
+    left: -80px;
     transform: rotate(-15deg);
-    opacity: 0.4;
+    opacity: 0.8;
   }
   .ink-splash::after {
-    width: 500px;
-    height: 400px;
-    bottom: -150px;
-    right: -100px;
+    width: 250px;
+    height: 200px;
+    bottom: -60px;
+    right: -40px;
     transform: rotate(20deg);
-    opacity: 0.3;
+    opacity: 0.7;
   }
   .ink-splat {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    background: #fff;
+    width: 120px;
+    height: 120px;
+    background: #ffffff;
     border-radius: 50%;
     filter: url(#ink-filter);
-    opacity: 0.4;
+    opacity: 0.8;
   }
-  .splat-1 { top: 30%; right: 10%; transform: scale(1.3) rotate(30deg); }
-  .splat-2 { bottom: 15%; left: 15%; transform: scale(0.9) rotate(-45deg); }
+  .splat-1 { top: 25%; right: 15%; transform: scale(1.1) rotate(30deg); }
+  .splat-2 { bottom: 20%; left: 20%; transform: scale(0.8) rotate(-45deg); }
 
   /* DIVIDER */
   .full-rule {
